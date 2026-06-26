@@ -1,11 +1,19 @@
 import SeriesCard from './SeriesCard.jsx'
-import { series } from '../data/series.js'
+import { useMovies } from '../context/MoviesContext.jsx'
 
 export default function SeriesGrid() {
+  const { movies, loading } = useMovies()
+
+  if (loading) {
+    return <p className="status">Loading...</p>
+  }
+
+  const tvSeries = movies.filter((item) => item.category === 'TV Series')
+
   return (
     <section className="grid" aria-label="TV Series list">
-      {series.map((item, i) => (
-        <SeriesCard key={`${item.title}-${i}`} item={item} />
+      {tvSeries.map((item) => (
+        <SeriesCard key={item.title} item={item} />
       ))}
     </section>
   )

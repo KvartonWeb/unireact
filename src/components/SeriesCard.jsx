@@ -1,10 +1,12 @@
 import { TvSeriesIcon } from './Icons.jsx'
 
 export default function SeriesCard({ item }) {
+  const image = item.thumbnail.regular.medium
+
   return (
     <article className="card">
       <div className="card__poster">
-        <img src={item.image} alt={item.title} loading="lazy" />
+        <img src={image} alt={item.title} loading="lazy" />
       </div>
 
       <ul className="card__meta">
