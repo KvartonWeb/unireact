@@ -177,6 +177,27 @@ img {
   object-fit: cover;
 }
 
+.card__bookmark {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(16, 20, 30, 0.6);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.card__bookmark.is-saved {
+  background: var(--text);
+  color: var(--bg);
+}
+
 .card__meta {
   display: flex;
   align-items: center;
